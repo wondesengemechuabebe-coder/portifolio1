@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>my Portfolio</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* SMOOTH SCROLL */
+
+html{
+    scroll-behavior:smooth;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#06142e;
+    color:white;
+    line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    background:#071a38;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.3);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#00bfff;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    margin-left:25px;
+    transition:0.3s;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:#00bfff;
+}
+
+/* HERO SECTION */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:120px 8%;
+    gap:50px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h1{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.hero-text h1 span{
+    color:#00bfff;
+}
+
+.hero-text h3{
+    font-size:25px;
+    margin-bottom:20px;
+    color:#b8c6db;
+}
+
+.hero-text p{
+    max-width:600px;
+    margin-bottom:30px;
+    color:#d9d9d9;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+}
+
+.buttons a{
+    text-decoration:none;
+}
+
+.buttons button{
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.btn1{
+    background:#00bfff;
+    color:white;
+}
+
+.btn2{
+    background:transparent;
+    border:2px solid #00bfff;
+    color:#00bfff;
+}
+
+.buttons button:hover{
+    transform:translateY(-4px);
+}
+
+/* PROFILE IMAGE */
+
+.hero-image img{
+    width:330px;
+    height:330px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #00bfff;
+    box-shadow:0 0 25px rgba(0,191,255,0.5);
+}
+
+/* SECTION */
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    font-size:35px;
+    color:#00bfff;
+    margin-bottom:40px;
+}
+
+/* ABOUT */
+
+.about-box{
+    background:#112240;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* SKILLS & PROJECTS */
+
+.skills-container,
+.projects-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#112240;
+    padding:25px;
+    border-radius:15px;
+    transition:0.3s;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#00bfff;
+}
+
+/* CONTACT */
+
+.contact-box{
+    background:#112240;
+    padding:30px;
+    border-radius:15px;
+}
+
+.contact-box p{
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+/* SOCIAL ICONS */
+
+.social-icons{
+    margin-top:20px;
+}
+
+.social-icons a{
+    color:white;
+    font-size:30px;
+    margin-right:20px;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    color:#00bfff;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#071a38;
+    color:#aaa;
+}
+
+/* ANIMATION */
+
+.hero-text,
+.hero-image,
+.card{
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+header{
+    flex-direction:column;
+}
+
+nav{
+    margin-top:10px;
+}
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero-image img{
+    width:250px;
+    height:250px;
+}
+
+.hero-text h1{
+    font-size:40px;
+}
+
+.buttons{
+    justify-content:center;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">WONDESEN</div>
+
+    <nav>
+
+        <a href="#about">About</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h1>Hello, I'm <span>Wondesen</span></h1>
+
+        <h3>Computer Science Student</h3>
+
+        <p>
+            I am passionate about software development,
+            web technologies and modern application development.
+            I enjoy learning new technologies and solving problems.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#">
+
+                <button class="btn1">Download CV</button>
+
+            </a>
+
+            <a href="#contact">
+
+                <button class="btn2">Contact Me</button>
+
+            </a>
+
+        </div>
+
+        <!-- SOCIAL ICONS -->
+
+        <div class="social-icons">
+
+            <a href="https://github.com" target="_blank">
+
+                <i class="fab fa-github"></i>
+
+            </a>
+
+            <a href="https://linkedin.com" target="_blank">https://www.linkedin.com/
+
+                <i class="fab fa-linkedin"></i>
+
+            </a>
+
+            <a href="https://t.me" target="_blank">https://web.telegram.org/
+
+                <i class="fab fa-telegram"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- YOUR PROFILE IMAGE -->
+
+    <div class="hero-image">
+
+        <img src="photo_2026-01-16_21-08-20(2).jpg" alt="Wondesen Profile">
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-box">
+
+        <p>
+            Hello! My name is Wondesen Gemechu.
+            I am a Computer Science student interested in
+            web development, software engineering and AI.
+            I enjoy coding, learning technology,
+            and improving my skills every day.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="card">
+
+            <h3>Programming</h3>
+
+            <p>
+                 Java, C++, JavaScript
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Web Development</h3>
+
+            <p>
+                HTML, CSS, JavaScript
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Database</h3>
+
+            <p>
+                MySQL, Firebase
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Tools</h3>
+
+            <p>
+                Git, GitHub, VS Code
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-container">
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+            <h3>Portfolio Website</h3>
+
+            <p>
+                Responsive portfolio website using
+                HTML, CSS and JavaScript.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Calculator App</h3>
+
+            <p>
+                Python calculator application
+                using Tkinter GUI.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact-box">
+
+        <p>Email: wondesengemechuabebe@gmail.com</p>
+
+        <p>Phone: +251985646618</p>
+
+        <p>GitHub: github.com/mygithub</p>
+
+        <p>LinkedIn: linkedin.com/in/myprofile</p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 All Rights Reserved
+
+</footer>
+
+</body>
+
+</html>
